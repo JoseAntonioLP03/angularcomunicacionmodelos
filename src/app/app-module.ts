@@ -1,8 +1,9 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-
+import { FormsModule } from '@angular/forms';
 import { routing, appRoutingProvider } from './app.routing';
+
+
 
 import { App } from './app';
 import { Listaproductos } from './components/listaproductos/listaproductos';
@@ -24,11 +25,13 @@ import { ComicComponent } from './components/comic-component/comic-component';
     PadreDeportes,
     HijoDeporte,
     LibreriaComponent,
-    ComicComponent
+    ComicComponent,
+    FormsModule
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
