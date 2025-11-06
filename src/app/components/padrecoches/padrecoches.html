@@ -1,0 +1,17 @@
+<section class="cars-page">
+  <header class="cars-header">
+    <div>
+      <h2>Garaje Superdeportivos</h2>
+      <p class="lead">Explora y prueba nuestra alineación de máquinas de alto rendimiento.</p>
+    </div>
+    <div class="header-actions">
+      <input class="search" placeholder="Buscar marca o modelo..." />
+    </div>
+  </header>
+
+  <div class="cars-grid">
+    @for(coche of cochesArray; track coche){
+    <app-hijocoche [car]="coche"></app-hijocoche>
+    }
+  </div>
+</section>

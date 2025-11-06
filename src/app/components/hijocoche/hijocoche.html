@@ -1,0 +1,45 @@
+<div class="car-card">
+  <div class="car-card-header">
+    <div class="car-title">
+      <h1>
+        {{ car.marca }} <span class="car-model">{{ car.modelo }}</span>
+      </h1>
+    </div>
+    <div
+      class="car-status"
+      [ngClass]="{ 'estado-activo': car.estado, 'estado-apagado': !car.estado }"
+      title="Estado del coche"
+    >
+      <span class="status-dot"></span>
+      <span class="status-text">{{ car.estado ? 'Encendido' : 'Apagado' }}</span>
+    </div>
+  </div>
+
+  <div class="car-card-body">
+    <div class="metrics">
+      <div class="speed-block">
+        <div class="speed-label">Velocidad</div>
+        <div class="speed-value">{{ car.velocidad }} <span class="unit">km/h</span></div>
+
+        <div class="speed-bar">
+          <div
+            class="speed-fill"
+            [style.width.%]="Math.min(100, (car.velocidad / 420) * 100)"
+          ></div>
+        </div>
+      </div>
+
+      <div class="accel-block">
+        <div class="accel-label">Aceleración (0-100)</div>
+        <div class="accel-value">{{ car.aceleracion }}s</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="car-card-footer">
+    <button class="btn btn-toggle" (click)="encenderCoche()">
+      {{ car.estado ? 'Apagar' : 'Encender' }}
+    </button>
+    <button class="btn btn-accelerate" (click)="acelerarCoche()">Acelerar ⚡</button>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div>
+  <h1>Modelos Producto Angular</h1>
+  @for(producto of productos; track producto){
+  <div>
+    <h2>{{ producto.nombre }} - {{ producto.precio }} €</h2>
+    <img src="{{ producto.imagen }}" style="width: 150px; height: 150px" />
+  </div>
+  }
+</div>

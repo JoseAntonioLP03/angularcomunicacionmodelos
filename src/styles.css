@@ -1,1 +1,159 @@
-/* You can add global styles to this file, and also import other style files */
+/* Racing Theme - Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background: #0a0e27;
+  color: #e2e8f0;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Animated Racing Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1429 100%);
+  z-index: -3;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 50px,
+      rgba(255, 215, 0, 0.03) 50px,
+      rgba(255, 215, 0, 0.03) 52px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 50px,
+      rgba(59, 130, 246, 0.02) 50px,
+      rgba(59, 130, 246, 0.02) 52px
+    );
+  z-index: -2;
+  opacity: 0.4;
+}
+
+/* Racing stripes animated background */
+.racing-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  opacity: 0.15;
+}
+
+.racing-stripe {
+  position: absolute;
+  width: 200%;
+  height: 8px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #fbbf24 25%,
+    #f59e0b 50%,
+    #fbbf24 75%,
+    transparent 100%
+  );
+  animation: race 3s linear infinite;
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+}
+
+.racing-stripe:nth-child(1) {
+  top: 20%;
+  animation-delay: 0s;
+}
+
+.racing-stripe:nth-child(2) {
+  top: 40%;
+  animation-delay: 0.6s;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #3b82f6 25%,
+    #60a5fa 50%,
+    #3b82f6 75%,
+    transparent 100%
+  );
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.racing-stripe:nth-child(3) {
+  top: 60%;
+  animation-delay: 1.2s;
+}
+
+.racing-stripe:nth-child(4) {
+  top: 80%;
+  animation-delay: 1.8s;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #ef4444 25%,
+    #f87171 50%,
+    #ef4444 75%,
+    transparent 100%
+  );
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+}
+
+@keyframes race {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+/* Headings with Racing Font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #f1f5f9;
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1f3a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b82f6, #7c3aed);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #60a5fa, #a78bfa);
+}

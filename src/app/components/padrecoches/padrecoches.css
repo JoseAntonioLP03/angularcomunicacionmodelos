@@ -1,0 +1,112 @@
+/* Padre Coches - Racing Page Layout */
+.cars-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+  position: relative;
+  z-index: 1;
+}.cars-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	margin-bottom: 2.5rem;
+	padding: 2rem;
+	background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(124, 58, 237, 0.1));
+	border-radius: 20px;
+	border: 2px solid rgba(59, 130, 246, 0.2);
+	box-shadow: 
+		0 0 40px rgba(59, 130, 246, 0.15),
+		inset 0 0 60px rgba(59, 130, 246, 0.05);
+	position: relative;
+	overflow: hidden;
+}
+
+.cars-header::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	right: -20%;
+	width: 300px;
+	height: 300px;
+	background: radial-gradient(circle, rgba(251, 191, 36, 0.15), transparent 70%);
+	border-radius: 50%;
+	animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+	0%, 100% { transform: scale(1); opacity: 0.3; }
+	50% { transform: scale(1.2); opacity: 0.6; }
+}
+
+.cars-header h2 {
+	margin: 0;
+	font-size: 2.5rem;
+	font-family: 'Orbitron', sans-serif;
+	font-weight: 900;
+	background: linear-gradient(135deg, #fbbf24, #f59e0b, #ef4444);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-shadow: none;
+	letter-spacing: 3px;
+	position: relative;
+	z-index: 1;
+}
+
+.lead {
+	color: #cbd5e1;
+	margin-top: 0.5rem;
+	font-size: 1.05rem;
+	font-weight: 400;
+	letter-spacing: 0.5px;
+	position: relative;
+	z-index: 1;
+}
+
+.header-actions {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	position: relative;
+	z-index: 1;
+}
+
+.search {
+	padding: 0.75rem 1rem;
+	border-radius: 12px;
+	border: 2px solid rgba(59, 130, 246, 0.3);
+	background: rgba(15, 23, 42, 0.6);
+	backdrop-filter: blur(10px);
+	width: 250px;
+	outline: none;
+	transition: all 0.3s ease;
+	color: #e2e8f0;
+	font-family: 'Rajdhani', sans-serif;
+	font-size: 1rem;
+}
+
+.search::placeholder {
+	color: #64748b;
+}
+
+.search:focus { 
+	box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+	border-color: #3b82f6;
+	background: rgba(15, 23, 42, 0.8);
+}
+
+.cars-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+	gap: 1.5rem;
+}
+
+@media (max-width: 720px) {
+	.cars-header { flex-direction: column; align-items: flex-start; }
+	.search { width: 100%; }
+	.cars-grid { grid-template-columns: 1fr; }
+}
+
+/* small utility */
+.btn { cursor: pointer; }
