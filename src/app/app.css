@@ -1,0 +1,24 @@
+/* App Container with proper spacing for fixed navbar */
+.app-container {
+  min-height: 100vh;
+  padding-top: 85px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Main content area */
+router-outlet + * {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

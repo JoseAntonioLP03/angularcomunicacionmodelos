@@ -1,4 +1,4 @@
-export class Coche {
+export class Comic {
 
     constructor(
         public titulo:string,

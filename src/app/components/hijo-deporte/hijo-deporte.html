@@ -1,4 +1,15 @@
-<div>
-  <h3>- {{ sport }}</h3>
-  <button (click)="seleccionarFavoritoHijo()">Seleccionar favorito</button>
+<div class="deporte-card">
+  <div class="deporte-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <circle cx="12" cy="12" r="10" />
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"
+      />
+    </svg>
+  </div>
+  <h3 class="deporte-name">{{ sport }}</h3>
+  <button (click)="seleccionarFavoritoHijo()" class="btn-select">Seleccionar Favorito</button>
 </div>

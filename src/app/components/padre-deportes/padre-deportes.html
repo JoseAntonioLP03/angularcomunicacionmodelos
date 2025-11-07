@@ -1,9 +1,12 @@
-<div>
-  <h1>Padre Deportes</h1>
-  <h2 style="color: rgb(236, 232, 0)">{{ mensaje }}</h2>
-  <ul>
+<div class="deportes-page">
+  <div class="page-header">
+    <h1>Deportes</h1>
+    <h2 class="mensaje-favorito">{{ mensaje }}</h2>
+  </div>
+
+  <ul class="deportes-grid">
     @for(deporte of deportes; track deporte){
-    <li>
+    <li class="deporte-item">
       <app-hijo-deporte
         [sport]="deporte"
         (seleccionarFavoritoPadre)="seleccionarFavoritoPadre($event)"
